@@ -14,9 +14,14 @@ EXIT 개인 자산 관리 시스템의 백엔드 API입니다. Notion MVP 기준
 ## Module Layout
 
 ```text
-domain      # JPA entity and enum model
-portfolio   # repository contracts and portfolio summary service
-app         # Spring Boot application, REST API, security, Flyway, tests
+common      # shared entity base and current-user abstraction
+account     # asset account model, repository, REST API
+asset       # asset item model, repository, REST API
+liability   # liability model, repository, REST API
+cashflow    # transaction and monthly cash-flow records
+goal        # Exit goal model, repository, REST API
+portfolio   # cross-domain portfolio summary and simulation API
+app         # Spring Boot bootstrap, security, Flyway, tests
 ```
 
 ## Run

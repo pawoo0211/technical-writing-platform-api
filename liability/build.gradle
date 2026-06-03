@@ -1,0 +1,20 @@
+plugins {
+	id 'java-library'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+dependencies {
+	api project(':common')
+	api 'org.springframework.data:spring-data-jpa'
+	implementation 'org.springframework:spring-web'
+	implementation 'jakarta.validation:jakarta.validation-api'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

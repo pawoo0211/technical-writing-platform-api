@@ -7,11 +7,15 @@ import java.time.YearMonth;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import dev.exit.asset.domain.AssetItem;
-import dev.exit.asset.domain.CashFlowTransaction;
-import dev.exit.asset.domain.ExitGoal;
-import dev.exit.asset.domain.Liability;
-import dev.exit.asset.domain.TransactionType;
+import dev.exit.asset.asset.AssetItem;
+import dev.exit.asset.asset.AssetItemRepository;
+import dev.exit.asset.cashflow.CashFlowTransaction;
+import dev.exit.asset.cashflow.CashFlowTransactionRepository;
+import dev.exit.asset.cashflow.TransactionType;
+import dev.exit.asset.goal.ExitGoal;
+import dev.exit.asset.goal.ExitGoalRepository;
+import dev.exit.asset.liability.Liability;
+import dev.exit.asset.liability.LiabilityRepository;
 
 @Service
 public class PortfolioSummaryService {

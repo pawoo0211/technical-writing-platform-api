@@ -10,7 +10,12 @@ java {
 }
 
 dependencies {
-	implementation project(':domain')
+	implementation project(':common')
+	implementation project(':account')
+	implementation project(':asset')
+	implementation project(':liability')
+	implementation project(':cashflow')
+	implementation project(':goal')
 	implementation project(':portfolio')
 
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'

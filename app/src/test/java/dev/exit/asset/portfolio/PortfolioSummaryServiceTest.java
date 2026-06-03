@@ -11,13 +11,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import dev.exit.asset.domain.AssetItem;
-import dev.exit.asset.domain.AssetType;
-import dev.exit.asset.domain.CashFlowTransaction;
-import dev.exit.asset.domain.ExitGoal;
-import dev.exit.asset.domain.Liability;
-import dev.exit.asset.domain.LiabilityType;
-import dev.exit.asset.domain.TransactionType;
+import dev.exit.asset.asset.AssetItem;
+import dev.exit.asset.asset.AssetItemRepository;
+import dev.exit.asset.asset.AssetType;
+import dev.exit.asset.cashflow.CashFlowTransaction;
+import dev.exit.asset.cashflow.CashFlowTransactionRepository;
+import dev.exit.asset.goal.ExitGoal;
+import dev.exit.asset.goal.ExitGoalRepository;
+import dev.exit.asset.liability.Liability;
+import dev.exit.asset.liability.LiabilityRepository;
+import dev.exit.asset.liability.LiabilityType;
+import dev.exit.asset.cashflow.TransactionType;
 
 @SpringBootTest
 @ActiveProfiles("test")
