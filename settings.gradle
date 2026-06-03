@@ -1,1 +1,5 @@
 rootProject.name = 'exit-asset-api'
+
+include 'domain'
+include 'portfolio'
+include 'app'

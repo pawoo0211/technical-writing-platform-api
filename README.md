@@ -6,15 +6,24 @@ EXIT 개인 자산 관리 시스템의 백엔드 API입니다. Notion MVP 기준
 
 - Java 21
 - Spring Boot 3.5.x
+- Gradle multi-module
 - Spring MVC, Spring Data JPA, Validation
 - PostgreSQL, Flyway
 - Spring Security OAuth2 Resource Server, Keycloak 연동 준비
+
+## Module Layout
+
+```text
+domain      # JPA entity and enum model
+portfolio   # repository contracts and portfolio summary service
+app         # Spring Boot application, REST API, security, Flyway, tests
+```
 
 ## Run
 
 ```bash
 ./gradlew test
-./gradlew bootRun
+./gradlew :app:bootRun
 ```
 
 기본 개발 모드는 `EXIT_SECURITY_ENABLED=false`라서 로컬에서 바로 API를 호출할 수 있습니다. Keycloak을 붙일 때는 아래처럼 켭니다.
@@ -25,7 +34,7 @@ KEYCLOAK_ISSUER_URI=http://localhost:8081/realms/exit \
 DB_URL=jdbc:postgresql://localhost:5432/exit_asset \
 DB_USERNAME=exit_asset \
 DB_PASSWORD=change-me \
-./gradlew bootRun
+./gradlew :app:bootRun
 ```
 
 ## API
