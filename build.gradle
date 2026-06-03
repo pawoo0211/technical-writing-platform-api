@@ -1,11 +1,16 @@
 plugins {
 	id 'org.springframework.boot' version '3.5.14' apply false
 	id 'io.spring.dependency-management' version '1.1.7' apply false
+	id 'org.jetbrains.kotlin.jvm' version '2.2.21' apply false
+	id 'org.jetbrains.kotlin.plugin.spring' version '2.2.21' apply false
+	id 'org.jetbrains.kotlin.plugin.jpa' version '2.2.21' apply false
 }
 
 group = 'dev.exit.asset'
 version = '0.0.1-SNAPSHOT'
 description = 'Exit asset management backend API'
+
+ext['kotlin.version'] = '2.2.21'
 
 subprojects {
 	group = rootProject.group
@@ -20,6 +25,12 @@ subprojects {
 	dependencyManagement {
 		imports {
 			mavenBom 'org.springframework.boot:spring-boot-dependencies:3.5.14'
+		}
+	}
+
+	pluginManager.withPlugin('org.jetbrains.kotlin.jvm') {
+		kotlin {
+			jvmToolchain(21)
 		}
 	}
 }

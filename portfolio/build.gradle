@@ -1,11 +1,7 @@
 plugins {
+	id 'org.jetbrains.kotlin.jvm'
+	id 'org.jetbrains.kotlin.plugin.spring'
 	id 'java-library'
-}
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
 }
 
 dependencies {
@@ -14,6 +10,7 @@ dependencies {
 	implementation project(':liability')
 	implementation project(':cashflow')
 	implementation project(':goal')
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'org.springframework:spring-context'
 	implementation 'org.springframework:spring-tx'
 	implementation 'org.springframework:spring-web'

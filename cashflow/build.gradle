@@ -1,15 +1,13 @@
 plugins {
+	id 'org.jetbrains.kotlin.jvm'
+	id 'org.jetbrains.kotlin.plugin.spring'
+	id 'org.jetbrains.kotlin.plugin.jpa'
 	id 'java-library'
-}
-
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
 }
 
 dependencies {
 	api project(':common')
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	api 'org.springframework.data:spring-data-jpa'
 	implementation 'org.springframework:spring-web'
 	implementation 'jakarta.validation:jakarta.validation-api'

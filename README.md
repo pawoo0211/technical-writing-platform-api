@@ -4,7 +4,8 @@ EXIT 개인 자산 관리 시스템의 백엔드 API입니다. Notion MVP 기준
 
 ## Stack
 
-- Java 21
+- Kotlin 2.2.x
+- JVM 21
 - Spring Boot 3.5.x
 - Gradle multi-module
 - Spring MVC, Spring Data JPA, Validation
