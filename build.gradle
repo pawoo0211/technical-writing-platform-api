@@ -6,9 +6,9 @@ plugins {
 	id 'org.jetbrains.kotlin.plugin.jpa' version '2.2.21' apply false
 }
 
-group = 'dev.exit.asset'
+group = 'dev.techwrite.platform'
 version = '0.0.1-SNAPSHOT'
-description = 'Exit asset management backend API'
+description = 'Technical writing platform backend API'
 
 ext['kotlin.version'] = '2.2.21'
 

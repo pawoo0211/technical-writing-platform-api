@@ -6,12 +6,12 @@ plugins {
 
 dependencies {
 	implementation project(':common')
-	implementation project(':account')
-	implementation project(':asset')
-	implementation project(':liability')
-	implementation project(':cashflow')
-	implementation project(':goal')
-	implementation project(':portfolio')
+	implementation project(':workspace')
+	implementation project(':document')
+	implementation project(':review')
+	implementation project(':event')
+	implementation project(':target')
+	implementation project(':ops')
 
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
