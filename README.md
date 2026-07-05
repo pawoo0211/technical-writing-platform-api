@@ -1,6 +1,6 @@
-# exit-asset-api
+# technical-writing-platform-api
 
-EXIT 개인 자산 관리 시스템의 백엔드 API입니다. Notion MVP 기준으로 자산, 부채, 거래, 목표 자산을 기록하고 순자산/현금흐름/Exit 목표 달성률을 계산합니다.
+Technical Writing Platform의 백엔드 API입니다. 노션형 문서 워크스페이스, 기술 문서 라이브러리, 리뷰 이슈, 발행 이벤트, 문서 품질 목표를 관리합니다.
 
 ## Stack
 
@@ -16,12 +16,12 @@ EXIT 개인 자산 관리 시스템의 백엔드 API입니다. Notion MVP 기준
 
 ```text
 common      # shared entity base and current-user abstraction
-account     # asset account model, repository, REST API
-asset       # asset item model, repository, REST API
-liability   # liability model, repository, REST API
-cashflow    # transaction and monthly cash-flow records
-goal        # Exit goal model, repository, REST API
-portfolio   # cross-domain portfolio summary and simulation API
+workspace   # documentation workspace and owning team API
+document    # technical document metadata, status, freshness API
+review      # review issues, severity, status, quality debt API
+event       # draft, review, publish, archive event API
+target      # coverage and review SLA target API
+ops         # documentation operations summary API
 app         # Spring Boot bootstrap, security, Flyway, tests
 ```
 
@@ -32,23 +32,28 @@ app         # Spring Boot bootstrap, security, Flyway, tests
 ./gradlew :app:bootRun
 ```
 
-기본 개발 모드는 `EXIT_SECURITY_ENABLED=false`라서 로컬에서 바로 API를 호출할 수 있습니다. Keycloak을 붙일 때는 아래처럼 켭니다.
+기본 개발 모드는 `TECHWRITE_SECURITY_ENABLED=false`라서 로컬에서 바로 API를 호출할 수 있습니다. Keycloak을 붙일 때는 아래처럼 켭니다.
 
 ```bash
-EXIT_SECURITY_ENABLED=true \
-KEYCLOAK_ISSUER_URI=http://localhost:8081/realms/exit \
-DB_URL=jdbc:postgresql://localhost:5432/exit_asset \
-DB_USERNAME=exit_asset \
+TECHWRITE_SECURITY_ENABLED=true \
+KEYCLOAK_ISSUER_URI=http://localhost:8081/realms/techwrite \
+DB_URL=jdbc:postgresql://localhost:5432/techwrite \
+DB_USERNAME=techwrite \
 DB_PASSWORD=change-me \
 ./gradlew :app:bootRun
 ```
 
-## API
+## API Surface
 
-- `GET /api/v1/portfolio/summary?month=2026-06`
-- `GET/POST /api/v1/accounts`
-- `GET/POST /api/v1/assets`
-- `GET/POST /api/v1/liabilities`
-- `GET/POST /api/v1/transactions`
-- `GET/POST /api/v1/goals`
-Exit asset management system backend API
+- `GET /api/v1/ops/summary?month=2026-07`
+- `GET/POST /api/v1/workspaces`
+- `GET/POST /api/v1/documents`
+- `GET/POST /api/v1/reviews`
+- `GET/POST /api/v1/events`
+- `GET/POST /api/v1/targets`
+
+## Repository Positioning
+
+추천 설명:
+
+> Backend API for a technical writing platform with workspaces, document metadata, review issues, publishing events, and documentation ops metrics.
